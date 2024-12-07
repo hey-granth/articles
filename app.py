@@ -47,7 +47,5 @@ def article(slug):
     return render_template('article.html', content=article['content'], metadata=article['metadata'])
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
 
 # to run the flask app, just run the command ```flask --app app.py --debug run``` in the terminal
