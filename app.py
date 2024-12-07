@@ -40,10 +40,10 @@ def index():
     articles = get_articles()
     return render_template('index.html', articles=articles)
 
+
 @app.route('/article/<slug>')
 def article(slug):
-    filename = f'{slug}.md'
-    article = render_markdown(filename)
+    article = render_markdown(slug)
     return render_template('article.html', content=article['content'], metadata=article['metadata'])
 
 
