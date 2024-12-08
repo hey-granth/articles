@@ -12,19 +12,6 @@ This is a Flask-based web application designed to render and display Markdown ar
 - Code syntax highlighting
 - Automatic article sorting by date
 
-## Project Structure
-
-```
-project_root/
-│
-├── app.py           # Flask application and routing logic
-├── articles/        # Directory containing Markdown article files
-├── templates/
-│   ├── base.html    # Base HTML template
-│   ├── index.html   # Home page template
-│   └── article.html # Individual article page template
-```
-
 ## Dependencies
 
 - Flask
@@ -60,7 +47,7 @@ Article content here...
 ## Setup and Installation
 
 1. Clone the repository
-2. Install dependencies: `pip install flask markdown2 pyyaml pygments`
+2. Install dependencies: `pip install -r requirements.txt`
 3. Place Markdown files in the `articles/` directory
 4. Run the application: `python app.py`
 
@@ -70,6 +57,8 @@ Article content here...
 - Adjust styling in templates using Tailwind CSS classes
 - Extend `app.py` to add more routes or functionality
 
-## License
+## Contact
 
-© 2024 Markdown Articles
+Maintainer: [Granth Agarwal](https://gtithub.com/hey-granth)
+
+Email: [heygranth@gmail.com](mailto:heygranth@gmail.com)
