@@ -1,22 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Markdown Articles{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            100: '#1a1a1a',
+                            200: '#2a2a2a',
+                            300: '#3a3a3a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <header>Markdown Articles
-        <nav>
-            <a href="/">Home</a>
-        </nav>
+<body class="flex flex-col min-h-screen bg-dark-100 text-gray-300">
+    <header class="bg-dark-200 shadow-md">
+        <div class="container mx-auto px-4 py-4">
+            <nav class="flex justify-between items-center">
+                <a href="/" class="text-xl font-semibold text-gray-100">Markdown Articles</a>
+                <div class="space-x-4">
+                    <a href="/" class="text-gray-400 hover:text-gray-100 transition duration-150 ease-in-out">Home</a>
+                </div>
+            </nav>
+        </div>
     </header>
-    <main>
+    <main class="container mx-auto px-4 py-8 flex-grow">
         {% block content %}{% endblock %}
     </main>
-    <footer>
-        <p>© 2024 Markdown Articles</p>
+    <footer class="bg-dark-200 shadow-md mt-auto">
+        <div class="container mx-auto px-4 py-4 text-center text-gray-400">
+            <p>© 2024 Markdown Articles</p>
+        </div>
     </footer>
 </body>
 </html>
+

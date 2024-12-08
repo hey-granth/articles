@@ -1,19 +1,20 @@
-{%  extends 'base.html' %}
+{% extends 'base.html' %}
 
 {% block title %}{{ metadata.title }}{% endblock %}
 
 {% block content %}
-    <article>
-        <h1>{{ metadata.title }}</h1>
-        <p class="article-date">
-            Published on - {{ metadata.date }}
+    <article class="bg-dark-200 shadow-lg rounded-lg p-6">
+        <h1 class="text-2xl font-bold text-gray-100 mb-2">{{ metadata.title }}</h1>
+        <p class="text-sm text-gray-400 mb-6">
+            Published on {{ metadata.date }}
             {% if metadata.author %}
                 by {{ metadata.author }}
             {% endif %}
         </p>
-        <div class="article-content">
+        <div class="prose prose-invert max-w-none">
             {{ content | safe }}
-{#            the data is flagged safe so that the template engine doesn't skip it#}
         </div>
+        <a href="/" class="mt-6 inline-block text-blue-400 hover:text-blue-300 transition duration-150 ease-in-out">← Back to Articles</a>
     </article>
 {% endblock %}
+
